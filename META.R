@@ -1,5 +1,5 @@
 ###
-# Project: Nele Spiess
+# Project: Gender differences in job satisfaction among university graduates
 # Purpose: Meta-file
 # Author:
 # Date:  01/09/2025

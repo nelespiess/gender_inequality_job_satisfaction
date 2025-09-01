@@ -1,5 +1,5 @@
 ###
-# Project: Nele Spiess
+# Project: Gender differences in job satisfaction among university graduates
 # Purpose: Load data
 # Author:
 # Date:  01/09/2025
@@ -8,7 +8,8 @@
 library(haven)
 library(stringr)
 
-### 
+## Structure:
+# Load the data
 
 # Set the path to Soep files
 path_soep39 <- "K:/Soep/Soep_V39"
@@ -25,7 +26,6 @@ for (file in soep_files) {
   save(tmp, file = file.path("raw", paste0(str_remove(file, ".dta$"), ".Rda")))
   rm(tmp)
 }
-
 
 
 ### END ####################################
