@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+
+# Files
+*.pdf
+*.csv
+*.xlsx
+*.Rda
+
+# Folders
+raw/
+data/
