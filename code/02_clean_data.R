@@ -18,20 +18,20 @@ datafiles <- list.files("raw")
 bioedu <- readRDS("raw/bioedu.Rda")
 
 # What are the dimensions of the data?
-dim(tmp)
+dim(bioedu)
 
 # What are the column names?
-names(tmp)
+names(bioedu)
 
 # Exists each individual only ones? no!
-sum(duplicated(tmp$pid))
+sum(duplicated(bioedu$pid))
 
 # What is the distribution of university graduates?
 table(tmp$bex8cert)
 mean(tmp$bex8cert>0)
 
 # Extract the ids of university graduates
-pid_graduates <- tmp$pid[tmp$bex8cert>0]
+pid_graduates <- bioedu$pid[bioedu$bex8cert>0]
 
 # 2. Biojob ------------------------------------
 
@@ -39,10 +39,10 @@ pid_graduates <- tmp$pid[tmp$bex8cert>0]
 biojob <- readRDS("raw/biojob.Rda")
 
 # Filter the jobs of the graduates
-tmp$university_graduate <- ifelse(tmp$pid%in%pid_graduates, 1, 0)
+tmp$university_graduate <- ifelse(biojob$pid%in%pid_graduates, 1, 0)
 
 # Plot the distribution
-dist <- as.data.frame(prop.table(table(prestige=tmp$isei88, graduate=tmp$university_graduate), 2)*100)
+dist <- as.data.frame(prop.table(table(prestige=biojob$isei88, graduate=biojob$university_graduate), 2)*100)
 
 dist <- dist[!(dist$prestige%in%c("-2", "-1")), ]
 
