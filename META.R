@@ -5,6 +5,12 @@
 # Date:  01/09/2025
 ####
 
+# Install the packages
+install <- FALSE
+if (install) {
+  source("code/packages.R")
+}
+
 
 # 1. Create folder structure -----------------------
 
