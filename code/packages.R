@@ -6,7 +6,7 @@
 ####
 
 # List the packages that are used
-packages <- c("haven", "stringr", "ggplot2")
+packages <- c("haven", "stringr", "ggplot2", "beepr")
 
 
 for (package in packages) {

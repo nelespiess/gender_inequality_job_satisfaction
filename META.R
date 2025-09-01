@@ -21,7 +21,13 @@ for (folder in folders) {
   cat("Folgender Ordner wurde erstellt:", folder, "\n")
 }
 
+# 2. Run the code files ---------------------------
 
+# Load the SOEP-data from K:
+source("code/01_load_data.R")
+
+# Cleans SOEP data
+source("code/02_clean_data.R")
 
 
 ### END ###########################################

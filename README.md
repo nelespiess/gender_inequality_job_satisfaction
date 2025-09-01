@@ -32,6 +32,23 @@ This work would not have been possible with the scientific and programming contr
 ## Reproduction Procedures
 
 ## Data structure
+We use the Socio-economic panel wave 39. We use the following SOEP-datasets:
+
+- id: apgen
+- education: biodedu
+- employment: biojob
+- employment satisfaction:
+- gender inequalities: 
+...
+
+### Documentation
+
+- questionnaire = The original questions asked by SOEP.
+- codebook = The data structure and variable names, labels, and values.
+- datafiles = The data
+
+
+
 
 
 ## Directory structure:
