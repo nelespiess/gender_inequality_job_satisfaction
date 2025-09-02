@@ -10,7 +10,8 @@ library(stringr)
 library(beepr)
 
 ## Structure:
-# Load the data
+
+# Load the data ------------------------------
 
 # Set the path to Soep files
 path_soep39 <- "K:/Soep/Soep_V39"
@@ -19,7 +20,7 @@ path_soep_data <- file.path(path_soep39, "STATA/SOEP-CORE.v39eu_Stata/Stata_DE/s
 # List all the soep files
 soep_files <- list.files(path_soep_data, pattern=".dta$")
 
-# Load the soep files
+# Load the soep-files
 for (file in soep_files) {
   
   # Remove the file extension
@@ -29,6 +30,7 @@ for (file in soep_files) {
   cat(old_filename, "\n")
   
   if (new_filename %in% list.files("raw")) {
+    
     cat("File already exists!\n")
     
   } else {
