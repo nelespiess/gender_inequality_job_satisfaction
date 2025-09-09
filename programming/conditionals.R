@@ -68,7 +68,7 @@ while (nele_score < 5 & henrik_score < 5) {
   nele_score <- nele_score + abs(x - nele)
   henrik_score <- henrik_score + abs(x - henrik)
   
-  cat("Henrik:", henrik_score, ", Nele:", nele_score "\n")
+  cat("Henrik:", henrik_score, ", Nele:", nele_score, "\n")
 
 }
 

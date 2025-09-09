@@ -31,6 +31,7 @@ for (file in soep_files) {
   
   if (new_filename %in% list.files("raw")) {
     
+    print_separator()
     cat("File already exists!\n")
     
   } else {
