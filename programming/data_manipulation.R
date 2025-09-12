@@ -1,6 +1,5 @@
 library(stringr)
-
-
+library(ggplot2)
 
 ## Load the data ===============================
 
@@ -139,6 +138,5 @@ lines(KOR$Year, KOR$ex)
 lines(SWE$Year, SWE$ex)
 lines(NOR$Year, NOR$ex)
 lines(DEUTNP$Year, DEUTNP$ex, lwd=2)
-
 
 ### END ####################################
