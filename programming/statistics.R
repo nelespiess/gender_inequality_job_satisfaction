@@ -1,5 +1,12 @@
 ### 
 
+library(ggplot2)
+library(stargazer)
+library(gtsummary)
+library(texreg)
+
+
+# Load the graphic scheme
 source("code/graphic_scheme.R")
 
 options(scipen=999)
@@ -59,14 +66,35 @@ describe_variation(df_wealth$real_estate)
 df_wealth$value_vehicles <- df_wealth$v0100a
 
 # Plot the relationship
-plot(log(df_wealth$real_estate), log(df_wealth$value_vehicles),
+plot(df_wealth$real_estate, df_wealth$value_vehicles,
      xlab="Real estate", ylab="Value cars")
 
 # Correlations
-cor(x=log(df_wealth$real_estate), y=log(df_wealth$value_vehicles), method="pearson", na.rm=T)
+cor(x=log(df_wealth$real_estate),
+    y=log(df_wealth$value_vehicles), 
+    method="pearson", use="na.or.complete")
 
 # Inference statistics -------------------------------
 
+# Create the log values
+df_wealth$log_real_estate <- ifelse(df_wealth$real_estate==0, 0, log(df_wealth$real_estate))
+df_wealth$log_value_vehicles <- ifelse(df_wealth$value_vehicles==0, 0, log(df_wealth$value_vehicles))
 
+# Estimate the baseline model
+mod1 <- lm(log_value_vehicles ~ log_real_estate, data=df_wealth)
+
+# Create a summary of the model
+summary(mod1)
+
+# ADd this to a plot
+abline(mod1, lwd=2, col="red")
+
+# Word output
+stargazer(mod1, 
+          type="text", 
+          out = "results/regression_vehicles_realestate.html")
+
+# Create the regression table
+wordreg(mod1, file="results/regression_vehicles_realestate.docx")
 
 ### END ##############################################
